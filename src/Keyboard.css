@@ -1,0 +1,140 @@
+.key.unused {
+  background-color: #ccc; }
+
+.english-character {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  color: #aaa;
+  font-size: 0.6em; }
+
+.container {
+  max-width: 816px;
+  padding: 8px 8px;
+  margin: 0 auto 30px auto;
+  box-shadow: inset 1px 1px 0px #f1f1f1, 3px 3px 6px 3px #303038;
+  background-color: #e3e3e3;
+  border-radius: 1px 1px 7px 7px; }
+
+.keyboard-row {
+  display: flex; }
+
+.key {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  padding: 3px 2px;
+  height: 30px;
+  margin: 4px;
+  letter-spacing: 0.5px;
+  color: #3a3a3a;
+  background-color: #f7f7f7;
+  flex: 1;
+  box-shadow: inset 0 -2px 0 #aaaaaa, inset 0px 1px 1px -1px #fff, 0px 1px 1px 0px #7a7a7a;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  user-select: none;
+  transition: transform 0.08s ease, background-color 0.08s ease, box-shadow 0.08s ease;
+  cursor: pointer; }
+  .key:hover {
+    background-color: #fbfbfb; }
+  .key span {
+    display: inline-block;
+    vertical-align: middle; }
+  .key::before {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    content: ''; }
+  .keyboard-row.thin .key {
+    height: 20px; }
+  .keyboard-row.bottom-row .key {
+    height: 24px; }
+  @media (min-width: 640px) {
+    .key {
+      height: 48px; }
+      .keyboard-row.thin .key {
+        height: 28px; }
+      .keyboard-row.bottom-row .key {
+        height: 55px; } }
+  .key.extra-size {
+    flex: 1.25; }
+  .key.extra-size-two {
+    flex: 1.625; }
+  .key.double-size {
+    flex: 2.125; }
+  .key.lowercase {
+    font-size: 11px;
+    text-transform: lowercase; }
+  .key.function {
+    font-size: 8px;
+    text-align: right; }
+  .key.function span {
+    vertical-align: bottom; }
+  .key.lower-right {
+    vertical-align: bottom;
+    text-align: right;
+    padding-right: 5px; }
+  .key.lower-left {
+    vertical-align: bottom;
+    text-align: left;
+    padding-left: 5px; }
+  .key.lower-center {
+    vertical-align: bottom; }
+  .key.space-bar {
+    flex: 7.2; }
+  .key .lower-row-text {
+    vertical-align: bottom;
+    padding-bottom: 2px; }
+  .key .absolute-left,
+  .key .absolute-right {
+    position: absolute;
+    top: 5px;
+    font-size: 9px; }
+    .key .absolute-left.icon,
+    .key .absolute-right.icon {
+      font-size: 12px; }
+  .key .absolute-right {
+    right: 5px; }
+  .key .absolute-left {
+    left: 5px; }
+    .key .absolute-left.caps-dot {
+      top: 3px;
+      left: 4px; }
+
+.bottom-row .arrows {
+  display: flex;
+  flex: 4;
+  justify-content: justify;
+  align-items: flex-end;
+  padding-bottom: 4px; }
+  .bottom-row .arrows .up-down {
+    flex: 1.2;
+    height: 54px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 4px;
+    margin-right: 4px; }
+    .bottom-row .arrows .up-down .key {
+      margin: 0; }
+    .bottom-row .arrows .up-down .key:first-child {
+      box-shadow: inset 0 -5px 4px -4px #aaaaaa, inset 0px 1px 1px -1px #fff, 0px 1px 1px 0px #7a7a7a;
+      border-bottom-left-radius: 1px;
+      border-bottom-right-radius: 1px; }
+    .bottom-row .arrows .up-down .key + .key {
+      border-top-left-radius: 1px;
+      border-top-right-radius: 1px; }
+  .bottom-row .arrows .key {
+    flex: 1;
+    font-size: 7px;
+    margin: 0 4px;
+    height: 27px;
+    font-family: "Georgia", sans-serif;
+    color: #555; }
+
+/*# sourceMappingURL=main.css.map */
