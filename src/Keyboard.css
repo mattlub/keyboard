@@ -39,7 +39,7 @@
   white-space: nowrap;
   overflow: hidden;
   user-select: none;
-  transition: transform 0.08s ease, background-color 0.08s ease, box-shadow 0.08s ease;
+  transition: transform 0.08s ease, background-color 0.1s ease, box-shadow 0.08s ease;
   cursor: pointer; }
   .key:hover {
     background-color: #fbfbfb; }
@@ -106,6 +106,10 @@
     .key .absolute-left.caps-dot {
       top: 3px;
       left: 4px; }
+
+.key.light {
+  background-color: #90d8ff;
+}
 
 .bottom-row .arrows {
   display: flex;

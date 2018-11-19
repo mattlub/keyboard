@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { keyMap } from './consts'
 
-const Key = ({ character })  => (
-  <div id={`key-${character}`} className="key">
+const Key = forwardRef(({ character }, ref) => (
+  <div id={`key-${character}`} className="key" ref={ref}>
     <span className="english-character">
       {character}
     </span>
@@ -10,6 +10,6 @@ const Key = ({ character })  => (
       {keyMap[character]}
     </span>
   </div>
-)
+))
 
 export default Key

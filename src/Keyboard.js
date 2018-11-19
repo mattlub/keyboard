@@ -4,18 +4,41 @@ import Key from './Key'
 import './Keyboard.css'
 
 class Keyboard extends Component {
-  constructor() {
+  constructor(props) {
+    super(props)
+    // contains refs for each keyboard key
+    this.keyRefs = {}
 
+    // stores the ref for each key
+    this.setRef = char => element => {
+      this.keyRefs[char] = element
+    }
   }
-  
+
   componentDidMount() {
-    document.addEventListener('keydown', e => {
-      console.log(e.key)
+    document.addEventListener('keypress', e => {
+      const key = e.key
+      console.log('keypress', {key, e})
+      console.log('ref', this.keyRefs[key])
+      
+      // add the light class then remove it, to make the key flash
+      if (this.keyRefs[key]) {
+        this.keyRefs[key].classList.add('light')
+      }
+    })
+
+    document.addEventListener('keyup', e => {
+      const key = e.key
+      console.log('keyup', { key, e })
+      if (this.keyRefs[key]) {
+        this.keyRefs[key].classList.remove('light')
+      }
     })
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown')
+    document.removeEventListener('keypress')
+    document.removeEventListener('keyup')
   }
 
   render() {
@@ -26,7 +49,7 @@ class Keyboard extends Component {
             <div className="key extra-size lowercase lower-left unused">
               <span className="lower-row-text">tab</span>
             </div>
-            <Key character="q" />
+            <Key character="q" ref={this.setRef('q')} />
             <Key character="w" />
             <Key character="e" />
             <Key character="r" />
