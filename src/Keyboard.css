@@ -9,15 +9,31 @@
   font-size: 0.6em; }
 
 .container {
-  max-width: 816px;
+  max-width: 674px;
   padding: 8px 8px;
   margin: 0 auto 30px auto;
-  box-shadow: inset 1px 1px 0px #f1f1f1, 3px 3px 6px 3px #303038;
+  box-shadow: inset 1px 1px 0px #f1f1f1, 1px 1px 1px 1px #6a6a7b;
   background-color: #e3e3e3;
-  border-radius: 1px 1px 7px 7px; }
+  border-radius: 5px;
+}
 
 .keyboard-row {
-  display: flex; }
+  display: flex;
+}
+
+.keyboard-row.row-1 {
+  max-width: 672px; /* 56 * 12 */
+}
+
+.keyboard-row.row-2 {
+  max-width: 560px; /* 56 * 10 */
+  margin-left: 18px;
+}
+
+.keyboard-row.row-3 {
+  max-width: 392px; /* 56 * 7 */
+  margin-left: 46px;
+}
 
 .key {
   position: relative;
@@ -39,106 +55,30 @@
   white-space: nowrap;
   overflow: hidden;
   user-select: none;
-  transition: transform 0.08s ease, background-color 0.1s ease, box-shadow 0.08s ease;
-  cursor: pointer; }
-  .key:hover {
-    background-color: #fbfbfb; }
-  .key span {
-    display: inline-block;
-    vertical-align: middle; }
-  .key::before {
-    display: inline-block;
-    vertical-align: middle;
-    height: 100%;
-    content: ''; }
-  .keyboard-row.thin .key {
-    height: 20px; }
-  .keyboard-row.bottom-row .key {
-    height: 24px; }
-  @media (min-width: 640px) {
-    .key {
-      height: 48px; }
-      .keyboard-row.thin .key {
-        height: 28px; }
-      .keyboard-row.bottom-row .key {
-        height: 55px; } }
-  .key.extra-size {
-    flex: 1.25; }
-  .key.extra-size-two {
-    flex: 1.625; }
-  .key.double-size {
-    flex: 2.125; }
-  .key.lowercase {
-    font-size: 11px;
-    text-transform: lowercase; }
-  .key.function {
-    font-size: 8px;
-    text-align: right; }
-  .key.function span {
-    vertical-align: bottom; }
-  .key.lower-right {
-    vertical-align: bottom;
-    text-align: right;
-    padding-right: 5px; }
-  .key.lower-left {
-    vertical-align: bottom;
-    text-align: left;
-    padding-left: 5px; }
-  .key.lower-center {
-    vertical-align: bottom; }
-  .key.space-bar {
-    flex: 7.2; }
-  .key .lower-row-text {
-    vertical-align: bottom;
-    padding-bottom: 2px; }
-  .key .absolute-left,
-  .key .absolute-right {
-    position: absolute;
-    top: 5px;
-    font-size: 9px; }
-    .key .absolute-left.icon,
-    .key .absolute-right.icon {
-      font-size: 12px; }
-  .key .absolute-right {
-    right: 5px; }
-  .key .absolute-left {
-    left: 5px; }
-    .key .absolute-left.caps-dot {
-      top: 3px;
-      left: 4px; }
-
-.key.light {
-  background-color: #90d8ff;
+  transition: transform 0.08s ease, background-color 0.08s ease-in-out, box-shadow 0.08s ease;
+  cursor: pointer;
 }
 
-.bottom-row .arrows {
-  display: flex;
-  flex: 4;
-  justify-content: justify;
-  align-items: flex-end;
-  padding-bottom: 4px; }
-  .bottom-row .arrows .up-down {
-    flex: 1.2;
-    height: 54px;
-    display: flex;
-    flex-direction: column;
-    margin-left: 4px;
-    margin-right: 4px; }
-    .bottom-row .arrows .up-down .key {
-      margin: 0; }
-    .bottom-row .arrows .up-down .key:first-child {
-      box-shadow: inset 0 -5px 4px -4px #aaaaaa, inset 0px 1px 1px -1px #fff, 0px 1px 1px 0px #7a7a7a;
-      border-bottom-left-radius: 1px;
-      border-bottom-right-radius: 1px; }
-    .bottom-row .arrows .up-down .key + .key {
-      border-top-left-radius: 1px;
-      border-top-right-radius: 1px; }
-  .bottom-row .arrows .key {
-    flex: 1;
-    font-size: 7px;
-    margin: 0 4px;
-    height: 27px;
-    font-family: "Georgia", sans-serif;
-    color: #555; }
+.key.light {
+  background-color: #b2e4ff;
+  box-shadow: none;
+  transform: translateY(2px);
+}
 
-/*# sourceMappingURL=main.css.map */
+.key span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.key::before {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  content: '';
+}
+
+@media (min-width: 640px) {
+  .key {
+    height: 48px;
+  }
+}
