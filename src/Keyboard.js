@@ -15,33 +15,35 @@ class Keyboard extends Component {
     this.setRef = char => element => {
       this.keyRefs[char] = element
     }
+
+    this.keypressListener = this.keypressListener.bind(this)
+    this.keyupListener = this.keyupListener.bind(this)
+  }
+
+  keypressListener(e) {
+    const key = e.key
+    // add the light class then remove it, to make the key flash
+    if (this.keyRefs[key]) {
+      this.keyRefs[key].classList.add('light')
+    }
+  }
+
+  keyupListener(e) {
+    // BUG: keyup for the letter is not fired if a special key is pressed
+    const key = e.key
+    if (this.keyRefs[key]) {
+      this.keyRefs[key].classList.remove('light')
+    }
   }
 
   componentDidMount() {
-    document.addEventListener('keypress', e => {
-      const key = e.key
-      console.log('keypress', {key, e})
-      console.log('ref', this.keyRefs[key])
-      
-      // add the light class then remove it, to make the key flash
-      if (this.keyRefs[key]) {
-        this.keyRefs[key].classList.add('light')
-      }
-    })
-
-    document.addEventListener('keyup', e => {
-      // BUG: keyup for the letter is not fired if a special key is pressed
-      const key = e.key
-      console.log('keyup', { key, e })
-      if (this.keyRefs[key]) {
-        this.keyRefs[key].classList.remove('light')
-      }
-    })
+    document.addEventListener('keypress', this.keypressListener)
+    document.addEventListener('keyup', this.keyupListener)
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keypress')
-    document.removeEventListener('keyup')
+    document.removeEventListener('keypress', this.keypressListener)
+    document.removeEventListener('keyup', this.keyupListener)
   }
 
   renderKey(key) {
