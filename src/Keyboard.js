@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+
 import Key from './Key'
+import { keys } from './consts'
 
 import './Keyboard.css'
 
@@ -28,6 +30,7 @@ class Keyboard extends Component {
     })
 
     document.addEventListener('keyup', e => {
+      // BUG: keyup for the letter is not fired if a special key is pressed
       const key = e.key
       console.log('keyup', { key, e })
       if (this.keyRefs[key]) {
@@ -49,51 +52,29 @@ class Keyboard extends Component {
             <div className="key extra-size lowercase lower-left unused">
               <span className="lower-row-text">tab</span>
             </div>
-            <Key character="q" ref={this.setRef('q')} />
-            <Key character="w" />
-            <Key character="e" />
-            <Key character="r" />
-            <Key character="t" />
-            <Key character="y" />
-            <Key character="u" />
-            <Key character="i" />
-            <Key character="o" />
-            <Key character="p" />
-            <Key character="[" />
-            <Key character="]" />
-            <div className="key unused">
-              <span></span>
-            </div>
+            {keys[0].map(key => (
+              <Key character={key} key={key} ref={this.setRef(key)} />
+            ))}
+            <div className="key unused"><span></span></div>
           </div>
           <div className="keyboard-row">
             <div className="key lowercase lower-left extra-size-two unused"><span className="lower-row-text">caps lock</span><span className="absolute-left caps-dot">&bull;</span></div>
-            <Key character="a" />
-            <Key character="s" />
-            <Key character="d" />
-            <Key character="f" />
-            <Key character="g" />
-            <Key character="h" />
-            <Key character="j" />
-            <Key character="k" />
-            <Key character="l" />
-            <Key character=";" />
-            <Key character="'" />
+            {keys[1].map(key => (
+              <Key character={key} key={key} ref={this.setRef(key)} />
+            ))}
+            <div className="key unused"><span></span></div>
             <div className="key extra-size-two lowercase lower-right unused">
               <span className="lower-row-text">return</span>
             </div>
           </div>
           <div className="keyboard-row">
             <div className="key double-size lowercase lower-left unused"><span className="lower-row-text">shift</span></div>
-            <Key character="z" />
-            <Key character="x" />
-            <Key character="c" />
-            <Key character="v" />
-            <Key character="b" />
-            <Key character="n" />
-            <Key character="m" />
-            <Key character="," />
-            <Key character="." />
-            <Key character="/" />
+            {keys[2].map(key => (
+              <Key character={key} key={key} ref={this.setRef(key)} />
+            ))}
+            <div className="key unused"><span></span></div>
+            <div className="key unused"><span></span></div>
+            <div className="key unused"><span></span></div>
             <div className="key double-size lowercase lower-right unused"><span className="lower-row-text">shift</span></div>
           </div>
           <div className="keyboard-row bottom-row">
