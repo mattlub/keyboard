@@ -35,3 +35,11 @@ export const keys = [
   ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';'], // 10
   ['z', 'x', 'c', 'v', 'b', 'n', 'm'] // 7
 ]
+
+export const words = [
+  { en: 'easy', ar: 'سهل' },
+  { en: 'difficult', ar: 'صعب' },
+  { en: 'important', ar: 'ضروري' },
+  { en: 'yesterday', ar: 'مبارح' },
+  { en: 'tomorrow', ar: 'بكرا' }
+]
