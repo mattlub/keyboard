@@ -19,5 +19,17 @@
 }
 
 .arabic-input.correct {
-  background: #98ff98;
+  animation: fade-out 1.5s;
+}
+
+@keyframes fade-out {
+  0% {
+    background-color: none;
+  }
+  10% {
+    background-color: #98ff98;
+  }
+  100% {
+    background-color: none;
+  }
 }
