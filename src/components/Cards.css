@@ -1,0 +1,21 @@
+.cards-table {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+
+.cards-table td {
+  padding: 7px 15px;
+}
+
+.cards-table th {
+  padding: 7px 15px;
+}
+
+.en-col {
+  text-align: right;
+}
+
+.ar-col {
+  text-align: left;
+}

@@ -37,15 +37,18 @@ export const keys = [
 ]
 
 export const defaultWords = [
-  { en: 'easy', ar: 'سهل' },
-  { en: 'difficult', ar: 'صعب' },
-  { en: 'important', ar: 'ضروري' },
-  { en: 'yesterday', ar: 'مبارح' },
-  { en: 'tomorrow', ar: 'بكرا' }
+  { id: -5, en: 'easy', ar: 'سهل' },
+  { id: -4, en: 'difficult', ar: 'صعب' },
+  { id: -3, en: 'important', ar: 'ضروري' },
+  { id: -2, en: 'yesterday', ar: 'مبارح' },
+  { id: -1, en: 'tomorrow', ar: 'بكرا' }
 ]
 
 export const TABS = {
   test: 'test',
+  cards: 'cards',
   add: 'add',
   help: 'help'
 }
+
+export const NAVBAR_TABS = ['test', 'cards', 'add']

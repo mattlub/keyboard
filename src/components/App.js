@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import TabNavigation from './TabNavigation.js'
 import Test from './Test.js'
+import Cards from './Cards.js'
 import Add from './Add.js'
 import Help from './Help.js'
 import { defaultWords, TABS } from '../consts.js'
@@ -34,8 +35,12 @@ class App extends Component {
   }
 
   handleAdd({ english, arabic }) {
-    // console.log('adding new card:', english, arabic)
+    // rudimentary id for now
+    const previousWord = this.state.words.slice().pop()
+    console.log({previousWord})
+    const newId = (previousWord && previousWord.id + 1) || 1
     const newWord = {
+      id: newId,
       en: english,
       ar: arabic
     }
@@ -48,6 +53,9 @@ class App extends Component {
     const { selectedTab, words } = this.state
     if (selectedTab === TABS.test) {
       return <Test words={words}/>
+    }
+    if (selectedTab === TABS.cards) {
+      return <Cards words={words} />
     }
     else if (selectedTab === TABS.add) {
       return <Add handleAdd={this.handleAdd} />
