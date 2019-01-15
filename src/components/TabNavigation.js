@@ -5,6 +5,7 @@ const TabNavigation = ({ selected, handleChange }) => (
   <nav className="nav">
     {Object.keys(TABS).map(tabName => (
       <button
+        key={tabName}
         className={`nav__item ${tabName === selected ? 'nav__item--selected' : ''}`}
         onClick={() => handleChange(tabName)}
       >

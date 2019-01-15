@@ -4,19 +4,27 @@ import TabNavigation from './TabNavigation.js'
 import Test from './Test.js'
 import Add from './Add.js'
 import Help from './Help.js'
-import { words, TABS } from '../consts'
-
-const INITIAL_STATE = {
-  selectedTab: TABS.test,
-  words
-}
+import { defaultWords, TABS } from '../consts.js'
+import { getWords, setWords } from '../localStorage.js'
 
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = INITIAL_STATE
+    this.state = {
+      selectedTab: TABS.test,
+      words: getWords() || defaultWords
+    }
     this.handleTabChange = this.handleTabChange.bind(this)
     this.handleAdd = this.handleAdd.bind(this)
+  }
+
+  componentDidMount() {
+    setWords(this.state.words)
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    // only need to do if words have changed
+    setWords(this.state.words)
   }
 
   handleTabChange(newTab) {

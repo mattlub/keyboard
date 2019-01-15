@@ -36,7 +36,7 @@ export const keys = [
   ['z', 'x', 'c', 'v', 'b', 'n', 'm'] // 7
 ]
 
-export const words = [
+export const defaultWords = [
   { en: 'easy', ar: 'سهل' },
   { en: 'difficult', ar: 'صعب' },
   { en: 'important', ar: 'ضروري' },
