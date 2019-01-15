@@ -16,10 +16,15 @@
   border-radius: 3px;
   border: none;
   border-bottom: 1px solid grey;
+  margin-bottom: 10px;
 }
 
 .arabic-input.correct {
   animation: fade-out 1.5s;
+}
+
+.show-answer {
+  height: 30px;
 }
 
 @keyframes fade-out {
