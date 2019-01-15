@@ -50,14 +50,18 @@ class App extends Component {
     const { selectedTab } = this.state
     return (
       <div className="App">
-        <TabNavigation
-          selected={selectedTab}
-          handleChange={this.handleTabChange}
-        />
-        <div className="total-words">
-          Total Words: {this.state.words.length}
+        <div className="header">
+          <TabNavigation
+            selected={selectedTab}
+            handleChange={this.handleTabChange}
+          />
+          <div className="total-words">
+            Total Words: {this.state.words.length}
+          </div>
         </div>
-        {this.renderContent()}
+        <div className="content">
+          {this.renderContent()}
+        </div>
       </div>
     );
   }

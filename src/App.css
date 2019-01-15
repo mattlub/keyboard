@@ -1,3 +1,17 @@
+body {
+  min-height: 100vh;
+  background: white;
+}
+
+.App {
+}
+
+.header {
+  background: #eee;
+  text-align: center;
+  position: relative;
+}
+
 .nav {
   text-align: center;
   padding: 15px;
@@ -7,15 +21,15 @@
   margin: 10px;
 }
 
-.nav__radio {
-  /* display: none; */
-}
-
-.nav__item--selected {
-  /* text-decoration: underline; */
-}
-
 .total-words {
-  text-align: center;
-  margin-bottom: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 15px;
+}
+
+.content {
+  padding-top: 20px;
+  margin: auto;
+  max-width: 700px;
 }
