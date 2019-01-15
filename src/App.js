@@ -37,9 +37,9 @@ class App extends Component {
   }
 
   renderContent() {
-    const { selectedTab } = this.state
+    const { selectedTab, words } = this.state
     if (selectedTab === TABS.test) {
-      return <Test />
+      return <Test words={words}/>
     }
     else if (selectedTab === TABS.add) {
       return <Add handleAdd={this.handleAdd} />

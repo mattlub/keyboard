@@ -1,22 +1,19 @@
 import React, { Component } from 'react';
 import './Test.css';
 import Keyboard from './Keyboard.js'
-import { words } from './consts'
 import { pickRandom, toArabic } from './utils';
 
 const NEXT_WORD_DELAY = 2000
 
-const INITIAL_STATE = {
-  correct: false,
-  word: pickRandom(words),
-  input: '',
-  showAnswer: false
-}
-
 class Test extends Component {
   constructor(props) {
     super(props)
-    this.state = INITIAL_STATE
+    this.state = {
+      correct: false,
+      word: pickRandom(this.props.words),
+      input: '',
+      showAnswer: false
+    }
     this.inputRef = null
   }
 
@@ -25,6 +22,7 @@ class Test extends Component {
     if (this.state.correct) {
       return
     }
+    const { words } = this.props
     const { word } = this.state
     // target value will have the english letter added on the end
     const newInput = toArabic(e.target.value)
@@ -47,7 +45,7 @@ class Test extends Component {
 
   handleSkip() {
     this.setState(prevState => ({
-      word: pickRandom(words, [prevState.word]),
+      word: pickRandom(this.props.words, [prevState.word]),
       input: '',
       showAnswer: false
     }))
