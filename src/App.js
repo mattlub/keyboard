@@ -6,7 +6,7 @@ import Add from './Add.js'
 import { words, TABS } from './consts'
 
 const INITIAL_STATE = {
-  selectedTab: TABS.add,
+  selectedTab: TABS.test,
   words
 }
 

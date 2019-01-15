@@ -6,19 +6,16 @@ import { pickRandom, toArabic } from './utils';
 
 const NEXT_WORD_DELAY = 2000
 
+const INITIAL_STATE = {
+  correct: false,
+  word: pickRandom(words),
+  input: ''
+}
+
 class Test extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      correct: false,
-      word: pickRandom(words),
-      input: ''
-    }
-    this.inputRef = null
-  }
-
-  componentDidMount() {
-    this.inputRef.focus()
+    this.state = INITIAL_STATE
   }
 
   handleInputChange(e) {
@@ -26,12 +23,13 @@ class Test extends Component {
     if (this.state.correct) {
       return
     }
+    const { word } = this.state
     // target value will have the english letter added on the end
     const newInput = toArabic(e.target.value)
-    const correct = newInput === this.state.word.ar
+    const correct = newInput === word.ar
     this.setState({
       input: newInput,
-      correct: correct
+      correct
     })
     if (correct) {
       setTimeout(() => {
@@ -53,7 +51,6 @@ class Test extends Component {
             {word.en}
           </div>
           <input
-            ref={e => this.inputRef = e}
             className={`arabic-input ${correct ? 'correct' : ''}`}
             direction="rtl"
             value={input}
