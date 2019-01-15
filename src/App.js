@@ -15,6 +15,7 @@ class App extends Component {
     super(props)
     this.state = INITIAL_STATE
     this.handleTabChange = this.handleTabChange.bind(this)
+    this.handleAdd = this.handleAdd.bind(this)
   }
 
   handleTabChange(e) {
@@ -24,8 +25,14 @@ class App extends Component {
   }
 
   handleAdd({ english, arabic }) {
-    console.log('adding', english, arabic)
-    return 'success'
+    // console.log('adding new card:', english, arabic)
+    const newWord = {
+      en: english,
+      ar: arabic
+    }
+    this.setState(prevState => ({
+      words: prevState.words.concat(newWord)
+    }))
   }
 
   renderContent() {
@@ -47,6 +54,9 @@ class App extends Component {
           selected={selectedTab}
           handleChange={this.handleTabChange}
         />
+        <div className="total-words">
+          Total Words: {this.state.words.length}
+        </div>
         {this.renderContent()}
       </div>
     );

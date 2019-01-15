@@ -42,13 +42,11 @@ class Add extends Component {
   }
 
   handleFormSubmit(e) {
+    e.preventDefault()
     const { handleAdd } = this.props
     const { english, arabic } = this.state
-    e.preventDefault()
-    const res = handleAdd({ english, arabic })
-    if (res === 'success') {
-      this.setState(INITIAL_STATE)
-    }
+    handleAdd({ english, arabic })
+    this.setState(INITIAL_STATE)
   }
 
   render() {
