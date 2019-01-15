@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import { keyMap } from './consts'
+import { keyMap } from '../consts'
 
 const Key = forwardRef(({ character }, ref) => (
   <div className="key" ref={ref}>

@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import './normalise.css'
 import './App.css'
 import TabNavigation from './TabNavigation.js'
 import Test from './Test.js'
 import Add from './Add.js'
-import { words, TABS } from './consts'
+import { words, TABS } from '../consts'
 
 const INITIAL_STATE = {
   selectedTab: TABS.test,

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Add.css';
 import Keyboard from './Keyboard.js'
-import { toArabic } from './utils';
+import { toArabic } from '../utils';
 
 const INITIAL_STATE = {
   english: '',

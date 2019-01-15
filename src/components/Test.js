@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Test.css';
 import Keyboard from './Keyboard.js'
-import { pickRandom, toArabic } from './utils';
+import { pickRandom, toArabic } from '../utils';
 
 const NEXT_WORD_DELAY = 2000
 
@@ -15,6 +15,10 @@ class Test extends Component {
       showAnswer: false
     }
     this.inputRef = null
+  }
+
+  componentDidMount() {
+    this.inputRef.focus()
   }
 
   handleInputChange(e) {

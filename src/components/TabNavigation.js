@@ -1,5 +1,5 @@
 import React from 'react'
-import { TABS } from './consts'
+import { TABS } from '../consts'
 
 const TabNavigation = ({ selected, handleChange }) => (
   <nav className="nav">

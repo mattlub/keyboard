@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import Key from './Key'
-import { keys } from './consts'
+import { keys } from '../consts'
 
 import './Keyboard.css'
 
