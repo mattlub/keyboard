@@ -55,19 +55,28 @@ class Add extends Component {
     const { english, arabic, isArabicInputFocused } = this.state
     return (
       <div className="add-section" >
-        <form onSubmit={e => this.handleFormSubmit(e)}>
-          <label>
+        <form
+          className="add-form"
+          onSubmit={e => this.handleFormSubmit(e)}
+        >
+          <label
+            className="add-form__field"
+          >
             English:
             <input
+              className="add-form__input"
               required
               ref={e => this.englishInputRef = e}
               value={english}
               onChange={e => this.handleEnglishInputChange(e)}
               />
           </label>
-          <label>
+          <label
+            className="add-form__field"
+          >
             Arabic:
             <input
+              className="add-form__input"
               required
               direction="rtl"
               value={arabic}
@@ -76,7 +85,10 @@ class Add extends Component {
               onBlur={() => this.handleArabicInputBlur()}
               />
           </label>
-          <button type="submit">
+          <button
+            className="add-form__submit-button"
+            type="submit"
+          >
             Add!
           </button>
           { isArabicInputFocused &&

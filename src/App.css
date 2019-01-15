@@ -1,0 +1,16 @@
+.nav {
+  text-align: center;
+  padding: 15px;
+}
+
+.nav__item {
+  margin: 10px;
+}
+
+.nav__radio {
+  /* display: none; */
+}
+
+.nav__item--selected {
+  /* text-decoration: underline; */
+}

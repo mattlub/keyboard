@@ -10,17 +10,23 @@ const INITIAL_STATE = {
 }
 
 const TabSelectRadios = ({ selected, handleChange }) => (
-  Object.keys(TABS).map(tabName => (
-    <label key={tabName}>
-      {tabName}
-      <input
-        type="radio"
-        value={tabName}
-        checked={selected === tabName}
-        onChange={handleChange}
-      />
-    </label>
-  ))
+  <nav className="nav">
+    {Object.keys(TABS).map(tabName => (
+      <label
+        className={`nav__item ${tabName === selected ? 'nav__item--selected' : ''}`}
+        key={tabName}
+      >
+        {tabName}
+        <input
+          className='nav__radio'
+          type="radio"
+          value={tabName}
+          checked={selected === tabName}
+          onChange={handleChange}
+        />
+      </label>
+    ))}
+  </nav>
 )
 
 class App extends Component {
