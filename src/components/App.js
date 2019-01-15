@@ -17,6 +17,7 @@ class App extends Component {
     }
     this.handleTabChange = this.handleTabChange.bind(this)
     this.handleAdd = this.handleAdd.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
   componentDidMount() {
@@ -49,13 +50,19 @@ class App extends Component {
     }))
   }
 
+  handleDelete(id) {
+    this.setState(prevState => ({
+      words: prevState.words.filter(word => word.id !== id)
+    }))
+  }
+
   renderContent() {
     const { selectedTab, words } = this.state
     if (selectedTab === TABS.test) {
       return <Test words={words}/>
     }
     if (selectedTab === TABS.cards) {
-      return <Cards words={words} />
+      return <Cards words={words} handleDelete={this.handleDelete}/>
     }
     else if (selectedTab === TABS.add) {
       return <Add handleAdd={this.handleAdd} />
