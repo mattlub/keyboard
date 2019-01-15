@@ -43,3 +43,8 @@ export const words = [
   { en: 'yesterday', ar: 'مبارح' },
   { en: 'tomorrow', ar: 'بكرا' }
 ]
+
+export const TABS = {
+  test: 'test',
+  add: 'add'
+}

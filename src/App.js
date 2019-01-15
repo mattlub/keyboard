@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
 import './App.css'
 import Test from './Test.js'
-import { words } from './consts'
+import Add from './Add.js'
+import { words, TABS } from './consts'
 
-const TABS = {
-  test: 'test',
-  add: 'add'
+const INITIAL_STATE = {
+  selectedTab: TABS.add,
+  words
 }
 
 const TabSelectRadios = ({ selected, handleChange }) => (
   Object.keys(TABS).map(tabName => (
-    <label>
+    <label key={tabName}>
       {tabName}
       <input
         type="radio"
@@ -25,10 +26,7 @@ const TabSelectRadios = ({ selected, handleChange }) => (
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      selectedTab: TABS.test,
-      words
-    }
+    this.state = INITIAL_STATE
     this.handleTabChange = this.handleTabChange.bind(this)
   }
 
@@ -36,6 +34,11 @@ class App extends Component {
     this.setState({
       selectedTab: e.target.value
     })
+  }
+
+  handleAdd({ english, arabic }) {
+    console.log('adding', english, arabic)
+    return 'success'
   }
 
   render() {
@@ -48,6 +51,9 @@ class App extends Component {
         />
         { selectedTab === TABS.test && 
           <Test />
+        }
+        { selectedTab === TABS.add &&
+          <Add handleAdd={this.handleAdd} />
         }
       </div>
     );
