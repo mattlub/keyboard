@@ -33,13 +33,20 @@ class Test extends Component {
     })
     if (correct) {
       setTimeout(() => {
-        this.setState({
+        this.setState(prevState => ({
           correct: false,
-          word: pickRandom(words, [this.state.word]),
+          word: pickRandom(words, [prevState.word]),
           input: ''
-        })
+        }))
       }, NEXT_WORD_DELAY)
     }
+  }
+
+  handleSkip() {
+    this.setState(prevState => ({
+      word: pickRandom(words, [prevState.word]),
+      input: ''
+    }))
   }
 
   render() {
@@ -56,6 +63,11 @@ class Test extends Component {
             value={input}
             onChange={e => this.handleInputChange(e)}
           />
+          <div>
+            <button onClick={() => this.handleSkip()}>
+              Skip
+            </button>
+          </div>
         </div>
         <Keyboard />
       </div>

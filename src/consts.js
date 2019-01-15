@@ -37,6 +37,8 @@ export const keys = [
 ]
 
 export const words = [
+  // { en: 'l', ar: 'ل' },
+  // { en: 'l', ar: 'ل' },
   { en: 'easy', ar: 'سهل' },
   { en: 'difficult', ar: 'صعب' },
   { en: 'important', ar: 'ضروري' },
