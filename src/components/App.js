@@ -3,6 +3,7 @@ import './App.css'
 import TabNavigation from './TabNavigation.js'
 import Test from './Test.js'
 import Add from './Add.js'
+import Help from './Help.js'
 import { words, TABS } from '../consts'
 
 const INITIAL_STATE = {
@@ -43,6 +44,9 @@ class App extends Component {
     else if (selectedTab === TABS.add) {
       return <Add handleAdd={this.handleAdd} />
     }
+    else if (selectedTab === TABS.help) {
+      return <Help />
+    }
     throw new Error('invalid selectedTab')
   }
 
@@ -52,6 +56,13 @@ class App extends Component {
       <div className="App">
         <div className="header">
           <div className="header-content">
+            <div className="tools">
+              <button
+                onClick={() => this.handleTabChange(TABS.help)}
+                className="help-button">
+                ?
+              </button>
+            </div>
             <TabNavigation
               selected={selectedTab}
               handleChange={this.handleTabChange}

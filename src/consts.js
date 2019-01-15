@@ -46,5 +46,6 @@ export const words = [
 
 export const TABS = {
   test: 'test',
-  add: 'add'
+  add: 'add',
+  help: 'help'
 }

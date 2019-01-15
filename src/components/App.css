@@ -8,6 +8,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button {
+  cursor: pointer;
+}
+
 .header {
   background: #eee;
   text-align: center;
@@ -46,6 +50,21 @@ body {
   top: 50%;
   padding-right: 15px;
   transform: translateY(-50%);
+}
+
+.tools {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  padding-left: 15px;
+  transform: translateY(-50%);
+}
+
+.help-button {
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #aaa;
 }
 
 .content {
