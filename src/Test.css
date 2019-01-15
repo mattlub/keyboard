@@ -25,6 +25,7 @@
 
 .show-answer {
   height: 30px;
+  margin-bottom: 10px;
 }
 
 @keyframes fade-out {

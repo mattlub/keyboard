@@ -3,9 +3,6 @@ body {
   background: white;
 }
 
-.App {
-}
-
 .header {
   background: #eee;
   text-align: center;
@@ -14,18 +11,31 @@ body {
 
 .nav {
   text-align: center;
-  padding: 15px;
+  padding: 10px;
 }
 
 .nav__item {
-  margin: 10px;
+  border: none;
+  margin: 5px 10px;
+  padding: 5px;
+}
+
+.nav__item-text {
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: border 0.4s;
+}
+
+.nav__item--selected .nav__item-text {
+  border-bottom: 2px solid black;
 }
 
 .total-words {
   position: absolute;
   right: 0;
-  top: 0;
-  padding: 15px;
+  top: 50%;
+  padding-right: 15px;
+  transform: translateY(-50%);
 }
 
 .content {

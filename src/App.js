@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './normalise.css'
 import './App.css'
 import TabNavigation from './TabNavigation.js'
 import Test from './Test.js'
@@ -18,9 +19,9 @@ class App extends Component {
     this.handleAdd = this.handleAdd.bind(this)
   }
 
-  handleTabChange(e) {
+  handleTabChange(newTab) {
     this.setState({
-      selectedTab: e.target.value
+      selectedTab: newTab
     })
   }
 

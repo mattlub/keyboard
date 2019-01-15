@@ -4,19 +4,14 @@ import { TABS } from './consts'
 const TabNavigation = ({ selected, handleChange }) => (
   <nav className="nav">
     {Object.keys(TABS).map(tabName => (
-      <label
+      <button
         className={`nav__item ${tabName === selected ? 'nav__item--selected' : ''}`}
-        key={tabName}
+        onClick={() => handleChange(tabName)}
       >
-        {tabName}
-        <input
-          className='nav__radio'
-          type="radio"
-          value={tabName}
-          checked={selected === tabName}
-          onChange={handleChange}
-        />
-      </label>
+        <div className="nav__item-text">
+          {tabName}
+        </div>
+      </button>
     ))}
   </nav>
 )
