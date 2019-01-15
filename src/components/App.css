@@ -44,14 +44,6 @@ button {
   border-bottom: 2px solid black;
 }
 
-.total-words {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  padding-right: 15px;
-  transform: translateY(-50%);
-}
-
 .tools {
   position: absolute;
   left: 0;

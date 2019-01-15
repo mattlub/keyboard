@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './App.css'
-import TabNavigation from './TabNavigation.js'
+import Header from './Header.js'
 import Test from './Test.js'
 import Cards from './Cards.js'
 import Add from './Add.js'
@@ -77,24 +77,10 @@ class App extends Component {
     const { selectedTab } = this.state
     return (
       <div className="App">
-        <div className="header">
-          <div className="header-content">
-            <div className="tools">
-              <button
-                onClick={() => this.handleTabChange(TABS.help)}
-                className="help-button">
-                ?
-              </button>
-            </div>
-            <TabNavigation
-              selected={selectedTab}
-              handleChange={this.handleTabChange}
-            />
-            <div className="total-words">
-              Total Words: {this.state.words.length}
-            </div>
-          </div>
-        </div>
+        <Header
+          selectedTab={selectedTab}
+          handleTabChange={this.handleTabChange}
+        />
         <div className="content">
           {this.renderContent()}
         </div>
