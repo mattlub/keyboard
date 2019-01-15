@@ -79,10 +79,14 @@ class Test extends Component {
             {showAnswer && word.ar}
           </div>
           <div>
-            <button onClick={() => this.handleSkip()}>
+            <button
+              className={`button button--not-disabled`}
+              onClick={() => this.handleSkip()}
+            >
               Skip
             </button>
             <button
+              className={`button button--${showAnswer ? '' : 'not-'}disabled`}
               disabled={showAnswer}
               onClick={() => this.handleShowAnswer()}
             >

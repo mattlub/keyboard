@@ -52,12 +52,14 @@ class App extends Component {
     return (
       <div className="App">
         <div className="header">
-          <TabNavigation
-            selected={selectedTab}
-            handleChange={this.handleTabChange}
-          />
-          <div className="total-words">
-            Total Words: {this.state.words.length}
+          <div className="header-content">
+            <TabNavigation
+              selected={selectedTab}
+              handleChange={this.handleTabChange}
+            />
+            <div className="total-words">
+              Total Words: {this.state.words.length}
+            </div>
           </div>
         </div>
         <div className="content">

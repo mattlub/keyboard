@@ -6,7 +6,12 @@ body {
 .header {
   background: #eee;
   text-align: center;
+}
+
+.header-content {
   position: relative;
+  max-width: 700px;
+  margin: auto;
 }
 
 .nav {
@@ -43,3 +48,22 @@ body {
   margin: auto;
   max-width: 700px;
 }
+
+.button {
+  box-shadow: inset 0 -2px 0 #aaaaaa, inset 0px 1px 1px -1px #fff, 0px 1px 1px 0px #7a7a7a;
+  border-radius: 3px;
+  border-radius: 3px;
+  width: 120px;
+  font-size: 14px;
+  padding: 10px;
+  margin-right: 10px;
+  border: none;
+  /* transition: transform 0.08s ease, background-color 0.08s ease-in-out, box-shadow 0.08s ease; */
+}
+
+/* adding animation for button click */
+.button--not-disabled:active {
+  box-shadow: none;
+  transform: translateY(2px);
+}
+

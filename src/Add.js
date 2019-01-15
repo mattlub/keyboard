@@ -6,7 +6,8 @@ import { toArabic } from './utils';
 const INITIAL_STATE = {
   english: '',
   arabic: '',
-  isArabicInputFocused: false
+  isArabicInputFocused: false,
+  successMessage: ''
 }
 
 class Add extends Component {
@@ -45,8 +46,17 @@ class Add extends Component {
     e.preventDefault()
     const { handleAdd } = this.props
     const { english, arabic } = this.state
-    handleAdd({ english, arabic })
-    this.setState(INITIAL_STATE)
+    const newWord = { english, arabic }
+    handleAdd(newWord)
+    this.setState({
+      ...INITIAL_STATE,
+      successMessage: 'successfully added new card!'
+    })
+    setTimeout(() => {
+      this.setState({
+        successMessage: ''
+      })
+    }, 2000)
   }
 
   render() {
@@ -60,10 +70,9 @@ class Add extends Component {
           <label
             className="add-form__field"
           >
-            English:
+            English
             <input
               className="add-form__input"
-              required
               ref={e => this.englishInputRef = e}
               value={english}
               onChange={e => this.handleEnglishInputChange(e)}
@@ -72,10 +81,9 @@ class Add extends Component {
           <label
             className="add-form__field"
           >
-            Arabic:
+            Arabic
             <input
               className="add-form__input"
-              required
               direction="rtl"
               value={arabic}
               onChange={e => this.handleArabicInputChange(e)}
@@ -84,11 +92,15 @@ class Add extends Component {
               />
           </label>
           <button
-            className="add-form__submit-button"
+            disabled={!(arabic && english)}
+            className={`button button--${!(arabic && english) ? 'not' : ''}disabled add-form__submit-button`}
             type="submit"
           >
-            Add!
+            Add new card
           </button>
+          <div className="message">
+            {this.state.successMessage}
+          </div>
           { isArabicInputFocused &&
             <Keyboard />
           }
