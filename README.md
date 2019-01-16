@@ -1,8 +1,10 @@
 # Arabic flashcards
 
-An Arabic/English flashcard app to practise vocabulary and practise typing with an arabic keyboard layout.
+An Arabic/English flashcard app to practise vocabulary and practise **typing with an arabic keyboard layout**.
 
-The app is more of a prototype/proof of concept, and does not currently have a concrete aim.
+The app is more of a **prototype/proof of concept**, and does not currently have a concrete aim.
+
+Nevertheless you can try the app [here](https://mattlub.github.io/keyboard/).
 
 ### Motivation
 When learning Arabic, I wanted to practise typing with an Arabic keyboard layout, as getting used to this makes it much easier to practise Arabic over text with friends. The idea was to combine this with a flashcard type learning method. Possibly a better idea would be to separate the keyboard idea, and create an app which teaches basic arabic and typing at the same time, but this requires the content to be created.
@@ -32,4 +34,4 @@ npm test
 The style of the keyboard was adapted from [this](https://codepen.io/tholex/pen/rgBcn) codepen.
 
 ### Contributing
-If you would like to suggest/implement a feature, raise an issue on the repo!
+If you would like to suggest/implement a feature, or have any other comments, raise an issue on the repo!
